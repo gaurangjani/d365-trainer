@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0f14;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(79, 182, 232, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(245, 166, 35, 0.05), transparent 40%);
+  color: #dbe2ea;
+  font-family: var(--font-body);
+}
+
+/* Scanline texture on the diagnostic console */
+.console-surface {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.blink-caret::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: #f5a623;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink-caret::after {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background: rgba(245, 166, 35, 0.3);
+}
+
+textarea::placeholder {
+  color: #4a5a69;
+}
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid #4fb6e8;
+  outline-offset: 2px;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for the log console */
+textarea::-webkit-scrollbar,
+.readout::-webkit-scrollbar {
+  width: 8px;
+}
+textarea::-webkit-scrollbar-thumb,
+.readout::-webkit-scrollbar-thumb {
+  background: #3e4c59;
+  border-radius: 4px;
+}
+textarea::-webkit-scrollbar-track,
+.readout::-webkit-scrollbar-track {
+  background: transparent;
+}
