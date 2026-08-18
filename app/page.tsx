@@ -30,13 +30,13 @@ function GuideReadout({ text }: { text: string }) {
                 {heading}
               </h3>
             </div>
-            <div className="text-[15px] leading-relaxed text-[#dbe2ea] prose-invert">
+            <div className="text-[15px] leading-relaxed text-[#dbe2ea]">
               <ReactMarkdown
                 components={{
                   p: ({ children }) => <p className="mb-3">{children}</p>,
-                  ul: ({ children }) => <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>,
-                  ol: ({ children }) => <ol className="list-decimal list-inside mb-3 space-y-1">{children}</ol>,
-                  li: ({ children }) => <li className="ml-2">{children}</li>,
+                  ul: ({ children }) => <ul className="list-disc mb-3 space-y-2 pl-6">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal mb-3 space-y-2 pl-6">{children}</ol>,
+                  li: ({ children }) => <li className="text-[15px]">{children}</li>,
                   strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
                   em: ({ children }) => <em className="italic">{children}</em>,
                   a: ({ href, children }) => (
@@ -101,7 +101,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen px-5 py-12 sm:py-16">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         {/* Header */}
         <div className="mb-10">
           <p className="font-mono text-xs tracking-[0.2em] text-steellight uppercase mb-3">
@@ -204,24 +204,25 @@ export default function Home() {
             </div>
 
             {sources.length > 0 && (
-              <div className="mt-4 rounded-lg border border-steel/30 bg-navy/60 px-5 py-4">
-                <p className="font-mono text-xs tracking-[0.15em] text-steellight uppercase mb-2">
-                  Sources consulted on Microsoft Learn ({sources.length})
+              <div className="mt-6 pt-6 border-t border-steel/30">
+                <p className="font-mono text-xs tracking-[0.15em] text-steellight uppercase mb-3">
+                  Sources consulted
                 </p>
-                <ul className="space-y-1">
-                  {sources.map((url) => (
-                    <li key={url}>
+                <div className="text-[15px] leading-relaxed text-[#dbe2ea] space-y-2">
+                  {sources.map((url, idx) => (
+                    <div key={url} className="flex items-start gap-2">
+                      <span className="text-amber font-mono text-xs mt-0.5">•</span>
                       <a
                         href={url}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sky text-sm underline underline-offset-2 break-all hover:text-white"
+                        className="text-sky underline hover:text-white break-all"
                       >
                         {url}
                       </a>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>
