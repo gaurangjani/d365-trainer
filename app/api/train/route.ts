@@ -56,8 +56,10 @@ Only include tips that reflect what you actually found documented. Omit this sec
 solid to add.
 
 ## Microsoft Learn References
-List only URLs you actually retrieved via the tools during your research — never invent a URL. For each: a short
-label ("Official reference" or "Optional deeper reading") and the exact URL.
+Use markdown link syntax: [Label](url). For each URL you actually retrieved, use a short label like:
+- [Official reference](url)
+- [Optional deeper reading](url)
+Never invent URLs. Never put the full URL as text — always use markdown link format.
 
 Keep the total response focused and scannable — prefer clarity over length.`;
 
