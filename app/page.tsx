@@ -100,6 +100,16 @@ export default function Home() {
     setTimeout(() => setCopied(false), 2000);
   }
 
+  async function handleCopyFull() {
+    if (!guide) return;
+    const fullText = sources.length > 0
+      ? `${guide}\n\n---\n\nSources:\n${sources.map((url) => `• ${url}`).join("\n")}`
+      : guide;
+    await navigator.clipboard.writeText(fullText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
     <main className="min-h-screen px-5 py-12 sm:py-16">
       <div className="mx-auto max-w-5xl">
@@ -193,12 +203,21 @@ export default function Home() {
               <p className="font-mono text-xs tracking-[0.2em] text-steellight uppercase">
                 Training Guide
               </p>
-              <button
-                onClick={handleCopy}
-                className="font-mono text-xs text-sky transition hover:text-white"
-              >
-                {copied ? "copied ✓" : "copy output"}
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={handleCopy}
+                  className="font-mono text-xs text-sky transition hover:text-white"
+                >
+                  {copied ? "copied ✓" : "copy guide"}
+                </button>
+                <span className="text-steel text-xs">•</span>
+                <button
+                  onClick={handleCopyFull}
+                  className="font-mono text-xs text-amber transition hover:text-white"
+                >
+                  {copied ? "copied ✓" : "copy all"}
+                </button>
+              </div>
             </div>
             <div className="readout rounded-lg border border-steel/40 bg-slate px-6 py-6">
               <GuideReadout text={guide} />
