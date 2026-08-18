@@ -42,9 +42,15 @@ RESPONSE FORMAT — Use markdown with these level-2 headings, in order:
 - How it fits into the end-to-end business process
 
 ## Step-by-Step Guidance
-Numbered steps only, one action per step. For each step include: what to do, what appears on screen, and why it
-matters. Include exact navigation paths as confirmed by the documentation you retrieved. Group related steps under
-short bolded phase labels if the task naturally has phases (e.g. **Navigate**, **Post**, **Verify**).
+Numbered steps only. Each step on its own line. For each step: what to do, what appears, why it matters.
+If grouping by phases, put the bolded phase label (**Phase Name**) on its own line, then start numbered steps on the next line.
+Example format:
+**Navigate**
+1. First step.
+2. Second step.
+
+**Post**
+3. Third step.
 
 ## Understanding Check
 One or two short questions checking the user is following along, and confirming what (if anything) they'd like
