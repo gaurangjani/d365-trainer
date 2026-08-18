@@ -248,12 +248,12 @@ export default function Home() {
             <p className="mt-4">
               Want more? Get professional D365 Finance training and consulting at{" "}
               <a
-                href="https://d365finance.uk"
+                href="https://www.d365finance.uk"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sky hover:text-white underline font-mono"
               >
-                d365finance.uk
+                www.d365finance.uk
               </a>
             </p>
           </div>
