@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 
 const EXAMPLES = [
   "Post an approved expense report",
@@ -29,8 +30,25 @@ function GuideReadout({ text }: { text: string }) {
                 {heading}
               </h3>
             </div>
-            <div className="whitespace-pre-wrap text-[15px] leading-relaxed text-[#dbe2ea]">
-              {body}
+            <div className="text-[15px] leading-relaxed text-[#dbe2ea] prose-invert">
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => <p className="mb-3">{children}</p>,
+                  ul: ({ children }) => <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal list-inside mb-3 space-y-1">{children}</ol>,
+                  li: ({ children }) => <li className="ml-2">{children}</li>,
+                  strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+                  em: ({ children }) => <em className="italic">{children}</em>,
+                  a: ({ href, children }) => (
+                    <a href={href} target="_blank" rel="noreferrer" className="text-sky underline hover:text-white">
+                      {children}
+                    </a>
+                  ),
+                  code: ({ children }) => <code className="bg-navy/60 px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>,
+                }}
+              >
+                {body}
+              </ReactMarkdown>
             </div>
           </div>
         );

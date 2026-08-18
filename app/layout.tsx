@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "D365 Trainer · Guided Learning",
   description:
     "Ask a Dynamics 365 Finance & Operations question and get a structured, step-by-step training guide.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
