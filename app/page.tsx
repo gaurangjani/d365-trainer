@@ -234,6 +234,29 @@ export default function Home() {
           behavior can change — re-run a question if it's been a while since you last generated a
           guide for that task.
         </p>
+
+        {/* Footer disclaimer */}
+        <div className="mt-12 pt-8 border-t border-steel/30">
+          <div className="space-y-3 text-xs text-steel">
+            <p>
+              <strong className="text-steellight">⚠️ Usage Limit:</strong> Maximum 50 questions/scenarios per day per IP address. This helps us manage server load on free infrastructure.
+            </p>
+            <p>
+              <strong className="text-steellight">🔒 Privacy Notice:</strong> Do not submit personal information, confidential data, or sensitive business details. This app uses free AI models in the background — treat it as a public service. Do not paste real employee names, financial data, or proprietary information.
+            </p>
+            <p className="mt-4">
+              Want more? Get professional D365 Finance training and consulting at{" "}
+              <a
+                href="https://d365finance.uk"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sky hover:text-white underline font-mono"
+              >
+                d365finance.uk
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );
