@@ -30,13 +30,13 @@ function GuideReadout({ text }: { text: string }) {
                 {heading}
               </h3>
             </div>
-            <div className="text-[15px] leading-relaxed text-[#dbe2ea]">
+            <div className="text-[15px] leading-relaxed text-[#dbe2ea] space-y-3">
               <ReactMarkdown
                 components={{
-                  p: ({ children }) => <p className="mb-3">{children}</p>,
+                  p: ({ children }) => <p className="mb-3 whitespace-normal break-words">{children}</p>,
                   ul: ({ children }) => <ul className="list-disc mb-3 space-y-2 pl-6">{children}</ul>,
                   ol: ({ children }) => <ol className="list-decimal mb-3 space-y-2 pl-6">{children}</ol>,
-                  li: ({ children }) => <li className="text-[15px]">{children}</li>,
+                  li: ({ children }) => <li className="text-[15px] mb-2">{children}</li>,
                   strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
                   em: ({ children }) => <em className="italic">{children}</em>,
                   a: ({ href, children }) => (
@@ -45,6 +45,7 @@ function GuideReadout({ text }: { text: string }) {
                     </a>
                   ),
                   code: ({ children }) => <code className="bg-navy/60 px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>,
+                  br: () => <div className="h-2" />,
                 }}
               >
                 {body}

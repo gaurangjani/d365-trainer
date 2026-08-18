@@ -42,15 +42,10 @@ RESPONSE FORMAT — Use markdown with these level-2 headings, in order:
 - How it fits into the end-to-end business process
 
 ## Step-by-Step Guidance
-Numbered steps only. Each step on its own line. For each step: what to do, what appears, why it matters.
-If grouping by phases, put the bolded phase label (**Phase Name**) on its own line, then start numbered steps on the next line.
-Example format:
-**Navigate**
-1. First step.
-2. Second step.
-
-**Post**
-3. Third step.
+Use proper markdown numbered lists. Write each step as a separate line starting with a number and period (1. 2. 3.).
+For each step: what to do, what appears on screen, why it matters. Include exact paths from your documentation.
+For phases, use bold labels on their own line: **Navigate** then 1. 2. 3. steps, then **Post** then next steps.
+Critical: Every number-period-space starts a new list item. Never put two step numbers on the same line.
 
 ## Understanding Check
 One or two short questions checking the user is following along, and confirming what (if anything) they'd like
