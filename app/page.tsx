@@ -245,6 +245,22 @@ export default function Home() {
                 </div>
               </div>
             )}
+
+            <div className="mt-6 pt-6 border-t border-steel/30 flex items-center gap-3">
+              <button
+                onClick={handleCopy}
+                className="font-mono text-xs text-sky transition hover:text-white"
+              >
+                {copied ? "copied ✓" : "copy guide"}
+              </button>
+              <span className="text-steel text-xs">•</span>
+              <button
+                onClick={handleCopyFull}
+                className="font-mono text-xs text-amber transition hover:text-white"
+              >
+                {copied ? "copied ✓" : "copy all"}
+              </button>
+            </div>
           </div>
         )}
 
